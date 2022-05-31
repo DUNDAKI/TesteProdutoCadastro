@@ -102,7 +102,7 @@ void listar(){
 
        if(maior > menor){
               // printf("-----------------");
-              printf("Este produto é o maior: %s\n", lista[i].nomeProduto);
+              printf("Este produto é o maior: %s\n", lista[i].nomeProduto); 
       }
 
 
