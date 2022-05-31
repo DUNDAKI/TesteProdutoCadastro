@@ -1,0 +1,13 @@
+if(i == 0){
+    maior = list_prod[i].qtd_produto;
+    menor = list_prod[i].qtd_produto;
+  }
+   if(menor < 30){
+    printf("Estoque abaixo de 30: %d\n", list_prod[i].qtd_produto);
+    }
+
+for(i = 0; i < numCadastro; ++i ){
+       printf("\nlista testa\n");
+       printf("Nome lista Teste: %s\n", lista[i].nomeProduto);
+       printf("Quantidade  lista Teste %d\n", lista[i].qtd_produto);
+    }
