@@ -33,10 +33,6 @@ int main(){
   cadastrar();
   listar();
   
-
-
-  
-
 }
 
 void cadastrar(){
@@ -70,43 +66,62 @@ void listar(){
       for(i = 0; i < numCadastro; ++i ){
          result = calcularEstoque(lista[i].qtd_produto,  lista[i].qtdVenda);
          // printf("Estoque Atualizado: %d\n", result);
+        if(i == 0){
+          maior = lista[i].qtd_produto;
+          menor = lista[i].qtd_produto;      
+        }
+        if(lista[i].qtd_produto > maior){
+            maior = lista[i].qtd_produto;
+        }
+        if(lista[i].qtd_produto < menor){
+          menor = lista[i].qtd_produto;
+        }
         
         if(result < 30){
             printf("\n-----------ESTOQUE----------\n");
             printf("Nome do produto: %s\n", lista[i].nomeProduto);
             printf("Quantidade produto %d\n", lista[i].qtd_produto);
-            printf("Quantidade de venda: %d\n", lista[i].qtdVenda);
-            printf("Estoque Abaixo do limite: \n");
+           
             printf("Estoque Atualizado: %d\n", result);
+            printf("\n");
+
+            if(maior > menor){
+              // printf("-----------------");
+              printf("Este produto é o maior: %s\n", lista[i].nomeProduto); 
+            }
+          
+        }
+       
+      }
+      
+      for(i = 0; i < numCadastro; ++i ){
+         result = calcularEstoque(lista[i].qtd_produto,  lista[i].qtdVenda);
+         // printf("Estoque Atualizado: %d\n", result);
+        
+        if(result > 30){
+            printf("\n-------ESTOQUE EM ALTO------\n");
+            printf("Nome do produto: %s\n", lista[i].nomeProduto);
+            printf("Estoque Atualizado: %d\n", result);
+          if(maior > menor){
+              // printf("-----------------");
+              printf("Este produto é o maior: %s\n", lista[i].nomeProduto); 
+          }
             printf("\n");
           
         }
        
       }
 
-      
-  
       for(i = 0; i < numCadastro; ++i ){
 
-      if(i == 0){
-        maior = lista[i].qtd_produto;
-        menor = lista[i].qtd_produto;      
-      }
-      if(lista[i].qtd_produto > maior){
-          maior = lista[i].qtd_produto;
-      }
-      if(lista[i].qtd_produto < menor){
-        menor = lista[i].qtd_produto;
-      }
-          
+        
+            
 
-       if(maior > menor){
-              // printf("-----------------");
-              printf("Este produto é o maior: %s\n", lista[i].nomeProduto); 
-      }
-
-
-      }
+        // if(maior > menor){
+        //       // printf("-----------------");
+        //       printf("Este produto é o maior: %s\n", lista[i].nomeProduto); 
+        // }
+     }
        
        
  
